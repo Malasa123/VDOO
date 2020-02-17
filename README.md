@@ -14,6 +14,7 @@ Property Name | Description  | Default | Type
 |thumbnail | thumbnail of each option (generic purpose) | null | Function | string |
 |trackBy | will detect change of inner list with the track by function (generic purpose) | (index , item) => |index | (item):string => string |
 |backgroundColor | background color of the component (generic purpose) | '#fff' |  string  |
+|maxHeight | set the maximum height for the menu | 256 |  string/number  |
 |openDirection | Which direction the component will open up to | 'bottom' |  'bottom'/'top'  |
 |placeholder | Place holder for the component | null |  string  |
 |selectedChange (event) | will fired when item selection is changed | --- |  ---  |

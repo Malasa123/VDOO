@@ -11,6 +11,7 @@ export class SelectComponent {
     @Input() placeholder: string;
     @Input() label: string = null;
     @Input() value: string = null;
+    @Input() maxHeight: number | string  = 256;
     @Input() openDirection: 'bottom' | 'top' = 'bottom';
     @Input() backgroundColor: string = '#fff';
     @Input() thumbnail: (item: any) => string;
@@ -30,18 +31,13 @@ export class SelectComponent {
 
     ngOnChanges(changes: SimpleChanges): void {
         const { selected } = changes;
-        if (selected && !selected.currentValue) {
-
+          if (selected && !selected.currentValue) {
         }
     }
 
     get menuClasses() {
         let cssClasses = { 'select-dropdown-menu': true };
         return { ...cssClasses, [this.openDirection]: true };
-      }
-
-    toConsole(value){
-        console.log(value)
     }
 
     get trackByFunction() {

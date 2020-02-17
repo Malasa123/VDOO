@@ -3,7 +3,8 @@
 
 .app-container {
   height: 98vh;
-  width: 98vw;
+  width: 96vw;
+  margin: 0 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,9 +16,6 @@
     width: 40px;
     height: 40px;
   }
-
-
-
   .custom-error-message{
       color: red;
       padding: 0 1em;

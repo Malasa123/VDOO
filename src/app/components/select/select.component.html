@@ -17,7 +17,7 @@
            height="24"
            viewBox="0 0 24 24"
            class="arrow"
-           [class.rotate]="(open && openDirection === 'top') || (!open && openDirection === 'bottom')">
+           [class.rotate]="(!open && openDirection === 'top') || (open && openDirection === 'bottom')">
         <polyline points="7,10 12,15 17,10"
                   fill="none"
                   stroke="currentColor"
@@ -29,6 +29,7 @@
   </div>
 
   <div [style.overflow-y]="'auto'"
+      [style.max-height.px]="maxHeight"
        [ngClass]="menuClasses"
        *ngIf="open">
     <vdo-select-item *ngFor="let item of items;trackBy : trackByFunction"
