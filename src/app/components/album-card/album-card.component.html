@@ -1,0 +1,18 @@
+<div class="album-card" *ngIf="album">
+        <div class="album-cover-wrapper left">
+            <img [src]="album?.images[0]?.url" alt="">
+        </div>
+        <div class="album-details right">
+            <div class="detail"><span>Album Name:</span> <span>{{album?.name}}</span></div>
+            <div class="detail"><span>Release Date:</span> <span>{{album?.release_date | date : 'dd/MM/yy'}}</span></div>
+            <div class="detail another-example">             
+                 <vdo-select 
+                 [openDirection]="'top'"
+                [items]="album?.available_markets"
+                placeholder="Avaliable markets - use case(position top)">
+    </vdo-select></div>
+        </div>
+
+        <ng-content name=".non-album"></ng-content>
+        
+</div>
