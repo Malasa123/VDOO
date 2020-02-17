@@ -1,27 +1,87 @@
 # VdooApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+This project have integration with spotify so you shold provide valid token in order to work.
 
-## Development server
+## SelectComponent
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Selector: vdo-select
+Property Name | Description  | Default | Type
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+items | The options of the dropdown | [] | Array<any>
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+label | Text to present for each item (generic purpose) | null | string
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+value | value of each option (generic purpose) | null | string
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+thumbnail | thumbnail of each option (generic purpose) | null | Function | string
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+trackBy | will detect change of inner list with the track by function (generic purpose) | (index , item) => index | Functionstring
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+thumbnail | thumbnail of each option (generic purpose) | null | Function | string
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+backgroundColor | background color of the component (generic purpose) | 'fff' |  string 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+placeholder | Place holder for the component | null |  string 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+selectedChange (event) | will fired when item selection is changed | --- |  --- |
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## SelectItemComponent
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Selector: vdo-select-item
+Property Name | Description  | Default | Type
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+item | data of the option | null | any
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+onSelect (event) | will fired when option is clicked | --- |  --- |
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+
+
+
+
+### Using custom template
+
+                <vdo-select 
+                            [label]="'name'"
+                            [value]="'id'"
+                            [trackBy]="trackAlbumBy"
+                            [thumbnail]="getThumbnail"
+                            [(selected)]="selected"
+                            placeholder="Select Bruno mars albums....">
+                            //MY CUSTOM TEMPLATE
+                    <vdo-select-item *ngFor="let album of albums"
+                                    [item]="album">
+                    <img class="custom-image" [src]="album.images[2].url" alt="">
+                        <span class="select-dropdown-item-label" >
+                        {{album.name}}
+                    </span>  
+                    </vdo-select-item>
+                </vdo-select>
+
+
+### Using only props(cleaner)
+
+                <vdo-select 
+                            [items]="albums"
+                            [label]="'name'"
+                            [value]="'id'"
+                            [trackBy]="trackAlbumBy"
+                            [thumbnail]="getThumbnail"
+                            [(selected)]="selected"
+                            placeholder="Select Bruno mars albums....">
+                </vdo-select>
