@@ -75,6 +75,7 @@ $mask-z-index: 2000;
   }
   .select-dropdown-menu {
     color: #000000;
+    overflow-y: auto;
     max-width: 100%;
     padding-top: 0;
     padding-bottom: 0;
@@ -88,6 +89,12 @@ $mask-z-index: 2000;
     min-width: 114px;
     background-color: #fff;
     border: 1px solid #efefef;
+    border: 1px solid #ffffff59;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 80%;
 
     &.top {
       position: absolute;
@@ -100,18 +107,18 @@ $mask-z-index: 2000;
       border-radius: 0 0 $border-curve $border-curve;
     }
 
-    border: 1px solid #ffffff59;
-    border-top: 1px solid transparent;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 80%;
+
     .select-dropdown-item {
       display: flex;
       align-items: center;
       padding: 1px 10px;
       &.selected{
           background: #2ebd5942;
+      }
+      &.no-item-message{
+          pointer-events: none;
+          opacity: .7;
+          height: 30px;
       }
       .select-dropdown-item-label {
         padding-left: 6px;

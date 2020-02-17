@@ -4,32 +4,19 @@ This project have integration with spotify so you shold provide valid token in o
 
 ## SelectComponent
 
+
 Selector: vdo-select
 Property Name | Description  | Default | Type
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-items | The options of the dropdown | [] | Array<any>
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-label | Text to present for each item (generic purpose) | null | string
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-value | value of each option (generic purpose) | null | string
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-thumbnail | thumbnail of each option (generic purpose) | null | Function | string
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-trackBy | will detect change of inner list with the track by function (generic purpose) | (index , item) => index | Functionstring
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-thumbnail | thumbnail of each option (generic purpose) | null | Function | string
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-backgroundColor | background color of the component (generic purpose) | 'fff' |  string 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-placeholder | Place holder for the component | null |  string 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-openDirection | Which direction the component will open up to | 'bottom' |  'bottom' | 'top' 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-selectedChange (event) | will fired when item selection is changed | --- |  --- |
+|--- | --- | --- | --- |
+|items | The options of the dropdown | [] | Array<any>|
+|label | Text to present for each item (generic purpose) | null | string |
+|value | value of each option (generic purpose) | null | string |
+|thumbnail | thumbnail of each option (generic purpose) | null | Function | string |
+|trackBy | will detect change of inner list with the track by function (generic purpose) | (index , item) => |index | (item):string => string |
+|backgroundColor | background color of the component (generic purpose) | '#fff' |  string  |
+|openDirection | Which direction the component will open up to | 'bottom' |  'bottom'/'top'  |
+|placeholder | Place holder for the component | null |  string  |
+|selectedChange (event) | will fired when item selection is changed | --- |  ---  |
 
 
 
@@ -39,10 +26,9 @@ selectedChange (event) | will fired when item selection is changed | --- |  --- 
 
 Selector: vdo-select-item
 Property Name | Description  | Default | Type
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-item | data of the option | null | any
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-onSelect (event) | will fired when option is clicked | --- |  --- |
+--- | --- | --- | --- 
+item | data of the option | null | any |
+onSelect (event) | will fired when option is clicked | --- |  ---  |
 
 
 

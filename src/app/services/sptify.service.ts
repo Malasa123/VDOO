@@ -10,7 +10,7 @@ export class SptifyService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly TOKEN: string = 'BQD7QjHx5nhAuSyLKBS61ZnIpcm8isR1rzmVV-Pxph91YwD4hZDHlx9XBkamigKpLpbkBxSx1xpUC1TgDq7fi7ocj3YEwHwxXIt4SjjPXOEMZH4sqcpW3_Vzh1Z44yvbOl0KPwQ0RqdD1PoUPI1s8b6qpEHWChtjZUzicdvoEhE8HSbrV-U9PVL1mSS57OhesjUBy0Zv1nBzjSLR_kba5Va6ZR1dfZWxU8rvCQfdYlvLAuUlIJ2hfa_UIv3cEW_IsZ0KTpTpXRz2Yed362Ay';
+  private readonly TOKEN: string = 'BQAkAN1wut-q4ZMuACt7Ceufy8x6h7q1PRsErrpRzSK0M55vwOutCTaWXiYSo_9ZK-1Ui1yYqQITiBncfSOsuHsN19QLrRWZnMnJJo6GJQJM0MieSCJqrjwpms92cpBuvhB-h3wV2MrU0dOYUeIbTnUr2YjuXnJx2JSDAgEOIJThMgg68UEbUCFgOsZGBsM9xFA_1UsPccPCiI8dhDnF01hF8Chp8IM0d01CQ-VMpZqiwKT-m5tFSqCWqwoyj2t58bo-myqSs3oL4wb3SxkH';
   private readonly country: string = 'ES';
   private readonly SPOTIFY_URL: string = 'https://api.spotify.com/v1/artists/';
   private get headers(): HttpHeaders {

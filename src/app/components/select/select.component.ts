@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges, ContentChildren, QueryList } from '@angular/core';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { SelectItemComponent } from './select-item.component';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'vdo-select',
@@ -35,7 +33,15 @@ export class SelectComponent {
         if (selected && !selected.currentValue) {
 
         }
+    }
 
+    get menuClasses() {
+        let cssClasses = { 'select-dropdown-menu': true };
+        return { ...cssClasses, [this.openDirection]: true };
+      }
+
+    toConsole(value){
+        console.log(value)
     }
 
     get trackByFunction() {
