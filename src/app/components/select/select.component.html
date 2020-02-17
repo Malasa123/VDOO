@@ -28,8 +28,9 @@
     </div>
   </div>
 
-  <div [style.overflow-y]="'auto'"
-      [style.max-height.px]="maxHeight"
+  <div #ref
+       [style.overflow-y]="'auto'"
+       [style.max-height.px]="maxHeight"
        [ngClass]="menuClasses"
        *ngIf="open">
     <vdo-select-item *ngFor="let item of items;trackBy : trackByFunction"
@@ -38,11 +39,11 @@
     <ng-content></ng-content>
   </div>
   
-  <!-- <div [ngClass]="menuClasses"
-       *ngIf="open ">
-    <div class="select-dropdown-item no-item-message">
-      <span class="select-dropdown-item-label">{{ref}}</span>
-    </div>
-  </div> -->
+  <div [ngClass]="menuClasses"
+       *ngIf="open  && noItemInTemplate">
+       <div  class="select-dropdown-item no-item-message">
+        <span class="select-dropdown-item-label">No Items Are avaliabe</span>
+      </div>
+  </div>
 
 </div>

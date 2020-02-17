@@ -25,10 +25,14 @@ export class SelectItemComponent {
   @Output() onSelect = new EventEmitter<any>();
 
 
+  // TODO:> remove any knowledge (parent injection) of child components from their parent component
+  // and after that remove the counter from parent
   constructor(public parent: SelectComponent) {
   }
 
   ngOnInit(): void {
+    //look at TODO
+    this.parent.counter++;
   }
 
   get itemValue(): string | number | boolean {
@@ -63,6 +67,11 @@ export class SelectItemComponent {
   selectItem() {
     this.onSelect.emit(this.item);
     this.parent.select(this.item);
+  }
+
+  ngOnDestroy(): void {
+    //look at TODO
+    this.parent.counter--;
   }
 
 }

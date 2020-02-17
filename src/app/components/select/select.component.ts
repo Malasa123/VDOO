@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'vdo-select',
@@ -16,12 +16,11 @@ export class SelectComponent {
     @Input() backgroundColor: string = '#fff';
     @Input() thumbnail: (item: any) => string;
     @Input() trackBy: (item: any) => any;
-
     @Output() selectedChange = new EventEmitter<any>();
-
 
     open: boolean = false;
     private _tracker = (index: number, item: any) => index;
+    counter:number = 0;
 
     ngOnInit(): void {
         if (this.selected) {
@@ -29,11 +28,11 @@ export class SelectComponent {
         }
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        const { selected } = changes;
-          if (selected && !selected.currentValue) {
-        }
+    get noItemInTemplate():boolean{
+        //look at TODO in select-item component class
+       return this.counter === 0 && this.items.length === 0;
     }
+
 
     get menuClasses() {
         let cssClasses = { 'select-dropdown-menu': true };
@@ -67,10 +66,6 @@ export class SelectComponent {
     resetSelection() {
         this.select(null);
     }
-
-
-
-
 
 }
 
