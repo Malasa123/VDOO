@@ -10,8 +10,7 @@ export class SptifyService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly TOKEN: string = 'BQBesXXTlx9PsfTFNzwsbJlNtXrMFRgxoyKaz6xmd2Wyw0bi-eKji4GFRJaM0_DGMssn85kWad_9a3-Q_YmNS-11g0349VNGAvUIzIoOJ3klKrGj--AZyhinxJ-rZdfvuL2coQUJPfyz4jiNV5olcIBqGN0YvstMkBem-7zWgbthPh1sMF4Q17rIN8V1h2IyLoxUnv8CysQitz5HHjUMrodeQyq2djlHlgpVBuhbg4hgnE9TPtQbp28k_hBJk4WaHb_QBwnSwNahMHS-oKG4';
-  private readonly country: string = 'ES';
+  private readonly TOKEN: string = 'BQCTW-oMAcU6tNc9HVbYUUtuoSOYibSJHeiAAbGm3VqEdN5bogKQU9FY9NnR9a29fIRk-4QrDSV16lEM7N-SC_l_8x_J2N6F3qZdBjXFifC1nCTGUcpSHd8iuGMhB7f3u1O3pl-x4x1f3vIlT3R4KnIKgYMKtGJWLIZqJ8R15paEKf0MeYD41QcABWQH0NWxheLbqH3gJ6N62Hbi6ZHe7Ofh80eJoP3y30bleuxxtCZHpkDCaPz9tNqzOEEob_l-xiHS8f6qVpe5nhfmDbBBnMR9mP7m-w';
   private readonly SPOTIFY_URL: string = 'https://api.spotify.com/v1/artists/';
   private get headers(): HttpHeaders {
     let headers = new HttpHeaders()
@@ -26,4 +25,5 @@ export class SptifyService {
       map((res: GetArtistAlbumRequest) => res.items)
     );
   }
+  
 }
