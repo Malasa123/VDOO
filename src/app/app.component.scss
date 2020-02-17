@@ -1,0 +1,25 @@
+
+
+
+.app-container {
+  height: 98vh;
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  .custom-image{
+    border-radius: 100%;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+  }
+
+
+
+  .custom-error-message{
+      color: red;
+      padding: 0 1em;
+  }
+}
